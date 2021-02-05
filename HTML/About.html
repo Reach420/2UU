@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/about.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Oswald:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Work+Sans:wght@300&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title">
+        <div class="pic1">
+            <img src="../IMAGE/2u.png" style="height: 65px; width: 65px; margin-left: 14.5%;">
+        </div>
+        <p
+            style="display: inline; position: absolute; left: 46%; bottom: -20%; font-size: 250%;font-family: 'Work Sans', sans-serif;">
+            About</p>
+        <div class="menu">
+            <div class="container2">
+                <button class="l1"><a href="../HTML/login.html"><img class="l" src="../IMAGE/icon.png"></a></button>
+                <div class="buttons">
+                    <div class="container">
+                        <a href="../HTML/Contact.html" class="btn effect01"><span>contact</span></a>
+                        <a href="../HTML/About.html" class="btn2 effect02" ><span>About</span></a>
+                        <a href="../HTML/index.html" class="btn3 effect01" ><span>Home</span></a>
+                    </div>
+                </div>
+            </div>3
+        </div>
+        <p class="mt" style="font-family: 'Poppins', sans-serif;">#1 Online store</p>
+    </div>
+    <div class="back">
+        <a class="openbtn" onclick="openNav()"><img class="img" src="../image/2line.png">
+            <p class="al" style="font-family: 'Manrope', sans-serif;">ALL</p>
+        </a>
+    </div>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#"></a>
+        <list>
+            <ul><a href="#">Clothing</a></ul>
+            <ul><a href="#">Food</a></ul>
+            <ul><a href="#">Toys</a></ul>
+            <ul><a href="#">Electronics</a></ul>
+            <ul><a href="#">Health & Beauty</a></ul>
+            <ul><a href="#">Furniture</a></ul>
+        </list>
+        <script>
+            function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+            const path = "./IMAGE/"
+            var slider_element = document.getElementById("slide");
+            console.log("sourceimage: " + slider_element.src)
+            var sliders = ["toy.jpg", "makeup.jpg", "furniture.jpg", "computer.jpg"];
+            var index = 0;
+            console.log("JS Work")
+            slider_element.src = path + sliders[1]
+            setInterval(function () {
+                slider_element.src = path + sliders[index];
+                console.log("sourceimage: " + slider_element.src)
+                index++;
+                if (index >= sliders.length) {
+                    index = 0;
+                }
+            }, 3000);
+        </script>
+    </div>
+    <div style="position: relative;">
+    <div style="text-align: center; color: white; ">
+        <p style="font-size:200%; margin-left: 63%;position: absolute; padding-bottom: 0.5%; top:17%; border-bottom-style: solid; border-bottom-width: 3.1px; border-bottom-color:rgb(30, 51, 116) ; width: fit-content;font-family: 'Work Sans', sans-serif;">2U Vision And Goals</p>
+        <p style="font-size:125%;position: absolute; padding: 0px 5% 0px 50%;font-family: 'Work Sans', sans-serif; top: 30%;">Our mission is to
+            continually raise the bar of the customer
+            experience by using the internet and technology to help consumers find, discover and buy anything, and
+            empower businesses and content creators to maximise their success. We aim to be Earth's most customer
+            centric company.We will continue to push at the boundaries of how technology – digital infrastructure and
+            services – can improve the customer experience and help make the economies of the countries where we operate
+            more competitive on the global stage. Our name "2U" wants to depict a message that our company will do
+            everything in out power to deliver your valued orders to you safely and quickly with an affordable price!!
+        </p>
+    </div>
+    <div class="container4">
+        <img src="../IMAGE/reach.jpg"
+            style="width: 30%;border: cornflowerblue solid 3px; height: 30%; margin-left: 5%; margin-top: 3%; margin-bottom: 5%;">
+        <div class="tb">
+            <p style="text-align: center; font-size: 150%;font-family: 'Fredoka One', cursive; ">CEO & DEVOLPER: REACH
+            </p>
+            <p style="text-indent: 12%; font-size: 105%; padding-left: 3%; padding-right: 3%;font-family: 'Work Sans', sans-serif;">My name is Reach,Im 15
+                years old and was born on May 5 2005, and im the owner and a Cambodian devolper of the company 2U and im
+                also a studying student at the school "Sabai Code".</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

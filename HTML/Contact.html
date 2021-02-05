@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/Contact.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Oswald:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&family=Pavanam&family=Roboto+Condensed&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_aeXV8av4lI7fXbbFENOw0');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_i15gk6t', 'template_hmy8uac', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="title">
+        <div class="pic1">
+            <img src="../IMAGE/2u.png" style="height: 65px; width: 65px; margin-left: 14.5%;">
+        </div>
+        <p
+            style="display: inline; position: absolute; left: 46%; bottom: -20%; font-size: 250%;font-family: 'Work Sans', sans-serif;">
+            Contact</p>
+        <div class="menu">
+            <div class="container2">
+                <button class="l1"><a href="../HTML/login.html"><img class="l" src="../IMAGE/icon.png"></a></button>
+                <div class="buttons">
+                    <div class="container">
+                        <a href="../HTML/Contact.html" class="btn effect02"><span>contact</span></a>
+                        <a href="../HTML/About.html" class="btn2 effect01"><span>About</span></a>
+                        <a href="../HTML/index.html" class="btn3 effect01"><span>Home</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="mt" style="font-family: 'Poppins', sans-serif;">#1 Online store</p>
+    </div>
+    <div class="back">
+        <a class="openbtn" onclick="openNav()"><img class="img" src="../image/2line.png">
+            <p class="al" style="font-family: 'Manrope', sans-serif;">ALL</p>
+        </a>
+    </div>
+    <div id="mySidebar" class="sidebar">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#"></a>
+        <list>
+            <ul><a href="#">Clothing</a></ul>
+            <ul><a href="#">Food</a></ul>
+            <ul><a href="#">Toys</a></ul>
+            <ul><a href="#">Electronics</a></ul>
+            <ul><a href="#">Health & Beauty</a></ul>
+            <ul><a href="#">Furniture</a></ul>
+        </list>
+    </div>
+    <div id="alll">
+        <div id="all2" style=" padding: 2%;padding-top:1%; width: 47%; margin-right: 5%;">
+            <form id="contact-form">
+                <label for="fname">Full Name</label><br>
+                <input type="text" id="name" placeholder="Your name.."><br><br>
+
+                <label for="Email">Email</label><br>
+                <input type="email" id="email" placeholder="...@gmail.com"><br><br>
+
+                <label for="country">Country</label><br>
+                <select id="country" name="country"><br><br>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="australia">Australia</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="cambodia">Cambodia</option>
+                    <option value="canada">Canada</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Laos">Laos</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="usa">USA</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Vietnam">Vietnam</option>
+
+                </select><br><br>
+
+                <label for="subject">Questions</label><br>
+                <textarea id="question" name="question" placeholder="Write something.."
+                    style="height:200px"></textarea><br>
+
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+        <div class="all3" style=" padding: 1.5%; width: 41%; position: relative; color: white;">
+            <p class="git">Get In Touch</p>
+            <p class="text1">If you have any questions. Just fill in the contact form, And we will answer you shortly.
+                If you you are living nearby, Come visit us at one of our comfortable office. </p>
+            <div class="ld">
+                <p class="ad">Address</p>
+            </div>
+                <i style="color: blueviolet;" class="icon-home icon-2x"></i>
+                <p style="font-family: 'Work Sans', sans-serif; margin-bottom: 0px;font-size: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;St 368,
+                    Phnom
+                    Penh, Cambodia</p></a></br>
+                <i style="color: green;" class="icon-phone-sign icon-2x"></i>
+                <p style="font-family: 'Work Sans', sans-serif; margin-top: 0px;font-size: 130%; margin-bottom: 6.5%;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;+85517255706,
+                    +85599954347</p></a>
+        <div >
+            <p class="lag">Follow Us</p>
+        </div>
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=100008757060143"><img class="pws" src="../IMAGE/fb.png"
+                    alt="facebook" style="width: 15%; height: 1%; padding-bottom: 0.3%; padding-top: 0px;"></a>
+            <a href="https://www.instagram.com/ri_chiiii/"><img class="pws" src="../IMAGE/in.png" alt="instagram"
+                    style="width: 15%; height: 1%; padding-left: 0px;"></a>
+        </div>
+    </div>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+        const path = "./IMAGE/"
+        var slider_element = document.getElementById("slide");
+        console.log("sourceimage: " + slider_element.src)
+        var sliders = ["toy.jpg", "makeup.jpg", "furniture.jpg", "computer.jpg"];
+        var index = 0;
+        console.log("JS Work")
+        slider_element.src = path + sliders[1]
+        setInterval(function () {
+            slider_element.src = path + sliders[index];
+            console.log("sourceimage: " + slider_element.src)
+            index++;
+            if (index >= sliders.length) {
+                index = 0;
+            }
+        }, 3000);
+    </script>
+
+</body>
+
+</html>

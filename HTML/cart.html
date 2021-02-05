@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/cart.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Oswald:wght@300&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Work+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <div class="title">
+        <div class="pic1">
+            <img src="../IMAGE/2u.png" style="height: 65px; width: 65px; margin-left: 14.5%;">
+        </div>
+        <div class="menu">
+            <div class="container2">
+<a class="l2" href="../HTML/cart.html"><img class="pic1" src="../IMAGE/cart.png"><span class="num"> 0</span></a>
+                <div>
+                    <button class="l1"><a href="../HTML/login.html"><img class="l" src="../IMAGE/icon.png"></a></button>
+                    <p class="amo">1</p>
+                </div>
+                
+                <div class="buttons">
+                    <div class="container">
+                        <a href="../HTML/Contact.html" class="btn effect01"><span>contact</span></a>
+                        <a href="../HTML/About.html" class="btn2 effect01"><span>About</span></a>
+                        <a href="../HTML/index.html" class="btn3 effect02"><span>Home</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="mt" style="font-family: 'Poppins', sans-serif;">#1 Online store</p>
+    </div>
+    <div class="back">
+        <a class="openbtn" onclick="openNav()"><img class="img" src="../image/2line.png">
+            <p class="al" style="font-family: 'Manrope', sans-serif;">ALL</p>
+        </a>
+    </div>
+    <div id="mySidebar" class="sidebar">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#"></a>
+        <list>
+            <ul class="na"><a  href="../index.html">Home</a></ul>
+            <ul class="na"><a href="../HTML/Contact.html">Contact</a></ul>
+            <ul class="na"><a  href="../HTML/About.html">About</a></ul>
+            <ul class="na"><a  href="../HTML/login.html">Login</a></ul>
+            <ul><a href="../HTML/clothing.html">Clothing</a></ul>
+            <ul><a href="../HTML/food.html">Food</a></ul>
+            <ul><a href="../HTML/Toy.html">Toys</a></ul>
+            <ul><a href="../HTML/electronics.html">Electronics</a></ul>
+            <ul><a href="../HTML/health.html">Health & Beauty</a></ul>
+            <ul><a href="../HTML/furniture.html">Furniture</a></ul>
+        </list>
+    </div>
+    <div>
+    <div id="discount"></div>
+    </div>
+    <div id="container"></div>
+    <div id="price"></div>
+    <button id="check">Order</button>
+    
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+        const  path = "./IMAGE/"
+        var slider_element = document.getElementById("slide");
+        console.log("sourceimage: "+slider_element.src)
+        var sliders = ["toy.jpg", "makeup.jpg", "furniture.jpg", "computer.jpg"];
+        var index = 0;
+        console.log("JS Work")
+        slider_element.src=path+ sliders[1]
+        setInterval(function () {
+            slider_element.src = path + sliders[index];
+            console.log("sourceimage: "+slider_element.src)
+            index++;
+            if (index >= sliders.length) {
+                index = 0;
+            }
+        }, 3000);
+    </script>
+    <script>
+        var items = JSON.parse(localStorage.getItem("items"));
+        var container = document.getElementById("container");
+        var price_element = document.getElementById("price");
+    total();
+        container.innerHTML = `
+        ${items.map((item) => {
+            return `
+            <div class="con">
+                <img class="image" src="${item.url}"/>
+                <p>${item.description}</p>
+                <p>${item.price} $</P>
+                <div>
+             <button class="increase">+</button>
+            <input type="number" class="number">
+            <button class="decrease"">-</button>
+            </div>
+            </div>
+            `;
+        }).join("")}
+        `;
+        var btn_increase= document.getElementsByClassName("increase");
+        var btn_decrease= document.getElementsByClassName("decrease");
+        var input_number= document.getElementsByClassName("number")
+        for (let i=0; i<btn_decrease.length; i++){
+            btn_decrease[i].addEventListener("click",()=>{
+                decrease(i);
+            });
+            btn_increase[i].addEventListener("click",()=>{
+                increase(i);
+            });
+        }
+        function increase(index){
+            var value = input_number[index].value;
+            value++;
+            input_number[index].value=value;
+            item[index].incart=value;
+            total();
+        }
+        function decrease(index){
+            var value = input_number[index].value;
+            value--;
+            value = value<0 ? 0 : value;
+            input_number[index].value=value;
+            item[index].incart=value;
+            total();
+        }
+        function total(){
+        var price = 0;
+        for(let i=0; i<items.length; i++){
+            price= price + Number((items[i].price))*Number((items[i].incart));
+            price_element.innerHTML= `Total Price = ${price}$`;
+        }
+        }
+        document.getElementById("check").addEventListener("click",()=>{
+            localStorage.removeItem("items");
+            container.innerHTML="";
+            price_element.innerHTML="Thank You! Your order will arrive soon"
+        })
+    </script>
+</body>
+
+</html>

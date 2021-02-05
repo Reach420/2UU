@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Oswald:wght@300&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Work+Sans:wght@300&display=swap"
+            rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="title">
+        <div class="pic1">
+            <img src="../IMAGE/2u.png" style="height: 65px; width: 65px; margin-left: 14.5%;">
+        </div>
+        <div class="menu">
+            <div class="container2">
+                <a class="l2" href="../HTML/cart.html"><img class="pic1" src="../IMAGE/cart.png"></a><span class="num">
+                    0</span>
+                <div>
+                    <button class="l1"><a href="../HTML/login.html"><img class="l" src="../IMAGE/icon.png"></a></button>
+                    <p class="amo">1</p>
+                </div>
+
+                <div class="buttons">
+                    <div class="container">
+                        <a href="../HTML/Contact.html" class="btn effect01"><span>contact</span></a>
+                        <a href="../HTML/About.html" class="btn2 effect01"><span>About</span></a>
+                        <a href="../HTML/index.html" class="btn3 effect02"><span>Home</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="mt" style="font-family: 'Poppins', sans-serif;">#1 Online store</p>
+    </div>
+    <div class="back">
+        <a class="openbtn" onclick="openNav()"><img class="img" src="../image/2line.png">
+            <p class="al" style="font-family: 'Manrope', sans-serif;">ALL</p>
+        </a>
+    </div>
+    <div id="mySidebar" class="sidebar">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#"></a>
+        <list>
+            <ul class="na"><a href="./index.html">Home</a></ul>
+            <ul class="na"><a href="./HTML/Contact.html">Contact</a></ul>
+            <ul class="na"><a href="./HTML/About.html">About</a></ul>
+            <ul class="na"><a href="./HTML/login.html">Login</a></ul>
+            <ul><a href="../HTML/clothing.html">Clothing</a></ul>
+            <ul><a href="../HTML/food.html">Food</a></ul>
+            <ul><a href="../HTML/Toy.html">Toys</a></ul>
+            <ul><a href="../HTML/electronics.html">Electronics</a></ul>
+            <ul><a href="../HTML/health.html">Health & Beauty</a></ul>
+            <ul><a href="../HTML/furniture.html">Furniture</a></ul>
+        </list>
+    </div>
+    <img id="slide" src="./IMAGE/furniture.jpg">
+    <div>
+        <p style="margin-left: 2%; font-size: 160%;font-family: 'Merriweather', serif;" class="t1">Discounts:</p>
+        <div id="discount"></div>
+        <p style="margin-left: 2%; font-size: 160%;font-family: 'Merriweather', serif;" class="t1">Best-Selling:</p>
+        <div id="top-rating"></div>
+        <p style="margin-left: 2%; font-size: 160%;font-family: 'Merriweather', serif;" class="t1">Top-Rating:</p>
+        <div id="best-selling"></div>
+    </div>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+        const path = "../IMAGE/"
+        var slider_element = document.getElementById("slide");
+        console.log("sourceimage: " + slider_element.src)
+        var sliders = ["toy.jpg", "makeup.jpg", "furniture.jpg", "computer.jpg"];
+        var index = 0;
+        console.log("JS Work")
+        slider_element.src = path + sliders[1]
+        setInterval(function () {
+            slider_element.src = path + sliders[index];
+            console.log("sourceimage: " + slider_element.src)
+            index++;
+            if (index >= sliders.length) {
+                index = 0;
+            }
+        }, 3000);
+    </script>
+    <script>
+        const items = [
+            {
+                id: 1,
+                url: "../IMAGE/hoodie.jpeg",
+                description: "Hoodie",
+                price: "15",
+                special: "discount",
+                type:"Clothing",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/pants.jpg",
+                description: "Pants",
+                price:"5",
+                special: "top-rating",
+                type:"Clothing",
+            },
+            {
+                id: 2,
+                url: "../Image/t-shirt.jpg",
+                description: "T Shirt",
+                price:"10",
+                type:"Clothing",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/long-sleeves.jpg",
+                description: "Long Sleeves",
+                price:"15",
+                type:"Clothing",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/socks.jpg",
+                description: "Socks",
+                price:"3",
+                type:"Clothing",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/pizza.jpg",
+                description: "Pizza",
+                price:"20",
+                special: "top-rating",
+                type:"Food",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/burger.jpg",
+                description: "Hamburgers",
+                price:"10",
+                type:"Food",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/sushi.jpg",
+                description: "Sushi",
+                price:"15",
+                special: "top-rating",
+                type:"Food",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/omellete.jpg",
+                description: "Omellete",
+                price:"4",
+                type:"Food",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/ramen.jpg",
+                description: "Ramen",
+                price:"9",
+                type:"Food",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/friend-chicken.jpeg",
+                description: "Fried Chicken",
+                price:"6",
+                special: "best-selling",
+                type:"Food",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/salad.jpg",
+                description: "Salad",
+                price:"5",
+                type:"Food",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/uno.jpeg",
+                description: "Uno",
+                price:"9",
+                special: "discount",
+                type:"toy",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/twister.jpg",
+                description: "Twister",
+                price:"25",
+                type:"toy",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/monopoly.jpg",
+                description: "Monopoly",
+                price:"30",
+                type:"toy",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/phone.jpeg",
+                description: "Phone",
+                price:"700",
+                special: "best-selling",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/computer (1).jpg",
+                description: "Computer",
+                price:"500",
+                special: "best-selling",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/earphone.png",
+                description: "Earphone",
+                price:"7",
+                special: "top-rating",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/earbuds.jpeg",
+                description: "Earbuds",
+                price:"185",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/phone-charger.jpg",
+                description: "Phone Charger",
+                price:"6",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/calculator.jpg",
+                description: "Calculator",
+                price:"5",
+                special: "discount",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/camera.jpeg",
+                description: "Camera",
+                price:"250",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/watch.jpg",
+                description: "Watch",
+                price:"30",
+                special: "discount",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/speaker.jpeg",
+                description: "Speaker",
+                price:"150",
+                special: "discount",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/glasses.jpeg",
+                description: "Smart Glasses",
+                price:"200",
+                special: "top-rating",
+                type:"electronics",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/advil.jpeg",
+                description: "Advil",
+                price:"12",
+                special: "discount",
+                type:"health",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/sleeping.jpg",
+                description: "Sleeping Medicine",
+                price:"5",
+                type:"health",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/perfume.jpg",
+                description: "Perfume",
+                price:"85",
+                type:"health",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/face.jpg",
+                description: "Face Mask",
+                price:"10",
+                special: "best-selling",
+                type:"health",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/makeup.png",
+                description: "Make Up",
+                price:"20",
+                special: "top-rating",
+                type:"health",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/chair.jpg",
+                description: "Chair",
+                price:"15",
+                type:"furniture",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/table.jpg",
+                description: "Table",
+                price:"60",
+                special: "best-selling",
+                type:"furniture",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/bed.jpeg",
+                description: "Bed",
+                price:"500",
+                special: "best-selling",
+                type:"furniture",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/couch.jpg",
+                description: "Couch",
+                price:"300",
+                type:"furniture",
+            },
+            {
+                id: 2,
+                url: "../IMAGE/lamp.jpg",
+                description: "Lamp",
+                price:"4",
+                type:"furniture",
+            },
+        ];
+        const app = document.getElementById("discount");
+        app.innerHTML = `
+        ${items.filter(i => i.special === "discount")
+                .map((item) => {
+                    return `
+                    <div class="slider">
+                    	<div class="item-${item.id}">
+                            <img class="image" src="${item.url}"/>
+                            <p class="desc">${item.description}: ${item.price}$</p>
+                            <div class="but">
+                                <button class="addcart0"> Add To Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                })
+                .join(" ")}
+ `;
+
+        const best_selling = document.getElementById("best-selling")
+        best_selling.innerHTML = `
+        ${items.filter(i => i.special === "best-selling")
+                .map((item) => {
+                    return `
+                    <div class="slider">
+                    	<div class="item-${item.id}">
+                            <img class="image" src="${item.url}"/>
+                            <p class="desc">${item.description}: ${item.price}$</p>
+                            <div class="but">
+                                <button class="addcart1"> Add To Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                })
+                .join(" ")}
+ `;
+        const top_rating = document.getElementById("top-rating")
+        top_rating.innerHTML = `
+            ${items.filter(i => i.special === "top-rating")
+                .map((item) => {
+                    return `
+                    <div class="slider">
+                    	<div class="item-${item.id}">
+                            <img class="image" src="${item.url}"/>
+                            <p class="desc">${item.description}: ${item.price}$</p>
+                            <div class="but">
+                                <button class="addcart2"> Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                })
+                .join(" ")}
+ `;
+        var block0= items.filter(i=>i.special==="discount");
+        var block1= items.filter(i=>i.special==="best-selling");
+        var block2= items.filter(i=>i.special==="top-rating");
+        console.log(block0);
+        var btns0 = document.getElementsByClassName("addcart0");
+        var btns1 = document.getElementsByClassName("addcart1");
+        var btns2 = document.getElementsByClassName("addcart2");
+        var carts = [];
+        for (let i = 0; i < btns0.length; i++) {
+            btns0[i].addEventListener("click", () => {
+                addcart0(i);
+               
+            })
+        }
+        for (let i = 0; i < btns1.length; i++) {
+            btns1[i].addEventListener("click", () => {
+                addcart1(i);
+            })
+        }
+        for (let i = 0; i < btns2.length; i++) {
+            btns2[i].addEventListener("click", () => {
+                addcart2(i);
+               
+            })
+        }
+        function addcart0(idx) {
+            carts.push(block0[idx]);
+            btns0[idx].disabled = true;
+            console.log(carts)
+            localStorage.setItem("items", JSON.stringify(carts));
+        }
+        function addcart1(idx) {
+            carts.push(block1[idx]);
+            btns1[idx].disabled = true;
+            console.log(carts)
+            localStorage.setItem("items", JSON.stringify(carts));
+        }
+        function addcart2(idx) {
+            carts.push(block2[idx]);
+            btns2[idx].disabled = true;
+            console.log(carts)
+            localStorage.setItem("items", JSON.stringify(carts));
+        }
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>

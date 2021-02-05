@@ -35,11 +35,12 @@
             <button  type="submit" id="submit" onsubmit="summit()">Login</button>
         </form>
     </div>
+    <a href="../index.html" style="margin-left: 28.7%; font-size: 20px;">Register</a>
 
     <script>
         console.log("login")
-        const myemail = "justreach555@gmail.com"
-        const my_pwd = 123
+        const myemail = localStorage.getItem("email");
+      const my_pwd = localStorage.getItem("password");
         var btn_submit = document.getElementById("submit");
         var email = document.getElementById("email");
         var password = document.getElementById("password");
@@ -53,7 +54,7 @@
             console.log(" Password : ", password.value, " :", typeof (password.value))
 
             if (email.value === myemail && password.value == Number(my_pwd)) {
-                window.open("./../index.html","_self")
+                window.open("./Home.html","_self")
             } else {
                 console.log("")
                 if (email.value !== myemail) {

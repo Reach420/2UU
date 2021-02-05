@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/login.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Oswald:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title">
+        <div class="pic1">
+            <a href="../HTML/Home.html"><img src="../IMAGE/2u.png" style="height: 65px; width: 65px;"></a>
+        </div>
+        <p class="mt" style="font-family: 'Poppins', sans-serif;">#1 Online store</p>
+    </div>
+    <div class="modal-content">
+        <p class="li" style="font-family: 'Julius Sans One', sans-serif;">Register</p>
+        <form id="form" action="/" method="GET" >
+            <label for="fname">Username:</label><br>
+            <input type="email" id="email"><br>
+            <p class="error"></p>
+            <label for="lname">Password:</label><br>
+            <input type="password" id="password" ><br>
+            <p class="error"></p>
+            <a href="./HTML/login.html" style="text-decoration: none; color: white;"><button  type="submit" id="submit" onsubmit="summit()">Register</button></a>
+        </form>
+    </div>
+
+    <script>
+    var form =document.getElementById("form");
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        localStorage.setItem("email",document.getElementById("email").value);
+        localStorage.setItem("password",document.getElementById("password").value);
+        location.href="./HTML/login.html"
+    })
+    </script>
+</body>
+
+</html>

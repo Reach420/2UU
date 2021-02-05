@@ -23,6 +23,9 @@
         <div class="pic1">
             <img src="../IMAGE/2u.png" style="height: 65px; width: 65px; margin-left: 14.5%;">
         </div>
+        <p
+            style="display: inline; position: absolute; left: 46%; bottom: -20%; font-size: 250%;font-family: 'Work Sans', sans-serif;">
+            Your Cart</p>
         <div class="menu">
             <div class="container2">
 <a class="l2" href="../HTML/cart.html"><img class="pic1" src="../IMAGE/cart.png"><span class="num"> 0</span></a>
@@ -35,7 +38,7 @@
                     <div class="container">
                         <a href="../HTML/Contact.html" class="btn effect01"><span>contact</span></a>
                         <a href="../HTML/About.html" class="btn2 effect01"><span>About</span></a>
-                        <a href="../HTML/index.html" class="btn3 effect02"><span>Home</span></a>
+                        <a href="../HTML/Home.html" class="btn3 effect02"><span>Home</span></a>
                     </div>
                 </div>
             </div>
@@ -82,21 +85,6 @@
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
         }
-        const  path = "./IMAGE/"
-        var slider_element = document.getElementById("slide");
-        console.log("sourceimage: "+slider_element.src)
-        var sliders = ["toy.jpg", "makeup.jpg", "furniture.jpg", "computer.jpg"];
-        var index = 0;
-        console.log("JS Work")
-        slider_element.src=path+ sliders[1]
-        setInterval(function () {
-            slider_element.src = path + sliders[index];
-            console.log("sourceimage: "+slider_element.src)
-            index++;
-            if (index >= sliders.length) {
-                index = 0;
-            }
-        }, 3000);
     </script>
     <script>
         var items = JSON.parse(localStorage.getItem("items"));
@@ -121,7 +109,8 @@
         `;
         var btn_increase= document.getElementsByClassName("increase");
         var btn_decrease= document.getElementsByClassName("decrease");
-        var input_number= document.getElementsByClassName("number")
+        var input_number= document.getElementsByClassName("number");
+        var product= items.concat(items1,items2,items3,items4,items5,items6)
         for (let i=0; i<btn_decrease.length; i++){
             btn_decrease[i].addEventListener("click",()=>{
                 decrease(i);
@@ -134,15 +123,16 @@
             var value = input_number[index].value;
             value++;
             input_number[index].value=value;
-            item[index].incart=value;
+            items[index].incart=value;
             total();
         }
+        
         function decrease(index){
             var value = input_number[index].value;
             value--;
             value = value<0 ? 0 : value;
             input_number[index].value=value;
-            item[index].incart=value;
+            items[index].incart=value;
             total();
         }
         function total(){

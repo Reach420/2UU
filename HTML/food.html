@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Oswald:wght@300&display=swap"
     rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Work+Sans:wght@300&display=swap"
+        rel="stylesheet">
     <title>Document</title>
     
 </head>
@@ -20,6 +23,9 @@
         <div class="pic1">
             <img src="../IMAGE/2u.png" style="height: 65px; width: 65px; margin-left: 14.5%;">
         </div>
+        <p
+            style="display: inline; position: absolute; left: 46%; bottom: -20%; font-size: 250%;font-family: 'Work Sans', sans-serif;">
+            Food</p>
         <div class="menu">
             <div class="container2">
                 <<a class="l2" href="../HTML/cart.html"><img class="pic1" src="../IMAGE/cart.png"><span class="num"> 0</span></a>
@@ -32,7 +38,7 @@
                     <div class="container">
                         <a href="../HTML/Contact.html" class="btn effect01"><span>contact</span></a>
                         <a href="../HTML/About.html" class="btn2 effect01"><span>About</span></a>
-                        <a href="../HTML/index.html" class="btn3 effect01"><span>Home</span></a>
+                        <a href="../HTML/Home.html" class="btn3 effect01"><span>Home</span></a>
                     </div>
                 </div>
             </div>
@@ -363,17 +369,32 @@
         ${items.filter(i=>i.type==="Food")
                 .map((item) => {
                     return `
-                    	<div class="item-${item.id}">
+                    <div class="item-${item.id}">
                             <img class="image" src="${item.url}"/>
                             <p class="desc">${item.description}: ${item.price}$</p>
                             <div class="but">
-                                <button><a class="addcart"> Add To Cart </a></button>
+                                <button class="addcart"> Add To Cart </button>
                             </div>
                         </div>
                     `;
                 })
                 .join(" ")}
  `;
+ var block= items.filter(i=>i.type==="Food");
+ var btns0 = document.getElementsByClassName("addcart");
+ var carts = [];
+ for (let i = 0; i < btns0.length; i++) {
+            btns0[i].addEventListener("click", () => {
+                addcart0(i);
+               
+            })
+        }
+        function addcart0(idx) {
+            carts.push(block[idx]);
+            btns0[idx].disabled = true;
+            console.log(carts);
+            var item1= localStorage.setItem("items3", JSON.stringify(carts));
+        }
     </script>
     <script src="main.js"></script>
 </body>

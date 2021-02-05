@@ -283,7 +283,7 @@ body{
   *{
     box-sizing: border-box;
   }
-  #discount,#top-rating,#best-selling{
+  #discount,#top-rating,#best-selling,#u10,#u20,#u30,#u50{
     display: flex;
     overflow-x: auto;
     margin: 0px;
@@ -364,6 +364,62 @@ body{
 }
 
 #top-rating::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+#u10::-webkit-scrollbar {
+  width: 20px;
+}
+
+#u10::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#u10::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+#u20::-webkit-scrollbar {
+  width: 20px;
+}
+
+#u20::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#u20::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+#u30::-webkit-scrollbar {
+  width: 20px;
+}
+
+#u30::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#u30::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+#u50::-webkit-scrollbar {
+  width: 20px;
+}
+
+#u50::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#u50::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 20px;
   border: 6px solid transparent;

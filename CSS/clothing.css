@@ -281,6 +281,7 @@ body{
   #discount,#top-rating,#best-selling{
     margin: 0px;
     width: 100%;
+    font-family: 'Work Sans', sans-serif;
   }
 
   .l3{

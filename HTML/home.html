@@ -38,7 +38,7 @@
                     <div class="container">
                         <a href="../HTML/Contact.html" class="btn effect01"><span>contact</span></a>
                         <a href="../HTML/About.html" class="btn2 effect01"><span>About</span></a>
-                        <a href="../HTML/index.html" class="btn3 effect02"><span>Home</span></a>
+                        <a href="../HTML/Homehtml" class="btn3 effect02"><span>Home</span></a>
                     </div>
                 </div>
             </div>
@@ -68,6 +68,10 @@
         </list>
     </div>
     <img id="slide" src="./IMAGE/furniture.jpg">
+    <div id="mark" style="text-align: center; color: white;font-family: 'Work Sans', sans-serif;">
+    <p style="font-size:35px;">Welcome to 2U!</p>
+    <p style="font-size: 20px; margin: 30px 15px 60px 15px;">At the 2U online shop we offer a variety of items such as clothing, furnitures, foods, toys, electronics and the everyday needs.In our store we have up to 30+ items and more to come with the best quality and shipping with our worldside global express. We value our customer very much so please enjoy your shopping trip at the 2U online store!</p>
+    </div>
     <div>
         <p style="margin-left: 2%; font-size: 160%;font-family: 'Merriweather', serif;" class="t1">Discounts:</p>
         <div id="discount"></div>
@@ -75,9 +79,17 @@
         <div id="top-rating"></div>
         <p style="margin-left: 2%; font-size: 160%;font-family: 'Merriweather', serif;" class="t1">Top-Rating:</p>
         <div id="best-selling"></div>
+        <p style="margin-left: 2%; font-size: 160%;font-family: 'Merriweather', serif;" class="t1">Under 10$:</p>
+        <div id="u10"></div>
+        <p style="margin-left: 2%; font-size: 160%;font-family: 'Merriweather', serif;" class="t1">Under 20$:</p>
+        <div id="u20"></div>
+        <p style="margin-left: 2%; font-size: 160%;font-family: 'Merriweather', serif;" class="t1">Under 30$:</p>
+        <div id="u30"></div>
+        <p style="margin-left: 2%; font-size: 160%;font-family: 'Merriweather', serif;" class="t1">Under 50$:</p>
+        <div id="u50"></div>
     </div>
 
-
+    <p style="text-align: center; color: white;font-family: 'Work Sans', sans-serif;font-size: 25px;"><a href="#slide">Go To The Top</a></p>
     <script>
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";
@@ -410,6 +422,78 @@
         const top_rating = document.getElementById("top-rating")
         top_rating.innerHTML = `
             ${items.filter(i => i.special === "top-rating")
+                .map((item) => {
+                    return `
+                    <div class="slider">
+                    	<div class="item-${item.id}">
+                            <img class="image" src="${item.url}"/>
+                            <p class="desc">${item.description}: ${item.price}$</p>
+                            <div class="but">
+                                <button class="addcart2"> Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                })
+                .join(" ")}
+ `;
+ const u_10 = document.getElementById("u10")
+        u_10.innerHTML = `
+            ${items.filter(i => i.price<10)
+                .map((item) => {
+                    return `
+                    <div class="slider">
+                    	<div class="item-${item.id}">
+                            <img class="image" src="${item.url}"/>
+                            <p class="desc">${item.description}: ${item.price}$</p>
+                            <div class="but">
+                                <button class="addcart2"> Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                })
+                .join(" ")}
+ `;
+ const u_20 = document.getElementById("u20")
+        u_20.innerHTML = `
+            ${items.filter(i => i.price<20)
+                .map((item) => {
+                    return `
+                    <div class="slider">
+                    	<div class="item-${item.id}">
+                            <img class="image" src="${item.url}"/>
+                            <p class="desc">${item.description}: ${item.price}$</p>
+                            <div class="but">
+                                <button class="addcart2"> Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                })
+                .join(" ")}
+ `;
+ const u_30 = document.getElementById("u30")
+        u_30.innerHTML = `
+            ${items.filter(i => i.price<30)
+                .map((item) => {
+                    return `
+                    <div class="slider">
+                    	<div class="item-${item.id}">
+                            <img class="image" src="${item.url}"/>
+                            <p class="desc">${item.description}: ${item.price}$</p>
+                            <div class="but">
+                                <button class="addcart2"> Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                })
+                .join(" ")}
+ `;
+ const u_50 = document.getElementById("u50")
+        u_50.innerHTML = `
+            ${items.filter(i => i.price<50)
                 .map((item) => {
                     return `
                     <div class="slider">

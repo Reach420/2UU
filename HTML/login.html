@@ -54,7 +54,8 @@
             console.log(" Password : ", password.value, " :", typeof (password.value))
 
             if (email.value === myemail && password.value == Number(my_pwd)) {
-                window.open("Home.html","_self")
+//                 window.open("Home.html","_self")
+                location.href="Home.html"
             } else {
                 console.log("")
                 if (email.value !== myemail) {
